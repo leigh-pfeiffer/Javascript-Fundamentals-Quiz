@@ -10,21 +10,32 @@
 </head>
 
 <body>
-    <header>
-        <div>High Score
-        </div>
-        <div>Timer <span id="timer-number"></span></div>
+    <header class="header">
+        <div>
+            <a href="#score-cection">High Score</a></div>
+        <div class="timer"> Timer - <span id="timer-number"></span></div>
     </header>
     <main>
-        <section id="quiz-section">
-            <button id="start-button">Start</button>
-            <div id="question-section">Question</div>
-            <div id="answer-section">Multi-answers</div>
-            <div id="responce-section">Correct/Wrong!</div>
+        <section id="quiz-section" class="quiz-section">
+            <div id="quiz-intro">
+            <h2>Javascript Quiz!</h2>
+            <p>Try to answar the following javascript related questions. </p>
+            </div>
+            <div id="start-div"><button id="start-button">Start</button></div>
+            <div id="question-section"></div>
+            <div id="answer-section"></div>
+            <div id="responce-section"></div>
+        </section>
+        <section id="submission-section" hidden>
+            <div id="score"></div>
+            <input id="initals">
+            <button id="submit">Submit</button>
         </section>
         <section id="score-section" hidden>
             <div>High Scores</div>
-            <div> Our Scores</div>
+            <ul id="score-list">
+
+            </ul>
             <button id="restart">Go back</button>
         </section>
     </main>
