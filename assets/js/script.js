@@ -87,7 +87,7 @@ function checkAnswer(answer) {
 
 // Start Quiz
 function startQuiz(event) {
-    event.preventDefault
+        event.preventDefault
    startDiv.style.display ="none"
    quizIntro.style.display = "none"
     renderNextQuestion(event)
@@ -141,6 +141,8 @@ function renderHighscores(){
 //restart
 function restart() {
     scoreSection.style.display = "none"
+    quizIntro.style.display = "initial"
+    startDiv.style.display = "initial"
     quizSection.style.display = "initial"
     currentTime = 100
     timerNumber.innerHTML = currentTime
