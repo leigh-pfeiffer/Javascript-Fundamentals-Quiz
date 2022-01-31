@@ -26,6 +26,7 @@ var initals = document.querySelector("#initals")
 var submitButton = document.querySelector("#submit")
 var scoreList = document.querySelector("#score-list")
 var quizIntro = document.querySelector("#quiz-intro")
+var highLink = document.querySelector("#high-link")
 
 //Questions
 var questionArray = [{
@@ -87,8 +88,8 @@ function checkAnswer(answer) {
 // Start Quiz
 function startQuiz(event) {
     event.preventDefault
-    startDiv.setAttribute("hidden", "true")
-    quizIntro.setAttribute("hidden", "true")
+   startDiv.style.display ="none"
+   quizIntro.style.display = "none"
     renderNextQuestion(event)
     timerInterval = setInterval(function () {
         if(currentTime > 0){
@@ -105,9 +106,9 @@ function startQuiz(event) {
 
 //end game
 function endGame() {
-    quizSection.setAttribute("hidden", "true")
-    submissionSection.removeAttribute("hidden")
-    startDiv.removeAttribute("hidden")
+    quizSection.style.display = "none"
+    submissionSection.style.display = "initial"
+   startDiv.style.display = "none"
     answerSection.innerHTML = ""
     questionSection.innerHTML = ""
     finalScore = currentTime
@@ -132,18 +133,19 @@ function renderHighscores(){
         scoreList.appendChild(item)
         
     }
-    submissionSection.setAttribute("hidden", "true")
-    scoreSection.removeAttribute("hidden")
-    quizSection.setAttribute("hidden", "true")
+    submissionSection.style.display = "none"
+    scoreSection.style.display = "initial"
+    quizSection.stylr.display ="none"
 }
 
 //restart
 function restart() {
-    scoreSection.setAttribute("hidden", "true")
-    quizSection.removeAttribute("hidden")
+    scoreSection.style.display = "none"
+    quizSection.style.display = "initial"
     currentTime = 100
     timerNumber.innerHTML = currentTime
 }
 startButton.addEventListener("click", function(event){startQuiz(event)})
 restartButton.addEventListener("click", restart)
 submitButton.addEventListener("click", submit)
+highLink.addEventListener("click", renderHighscores)
